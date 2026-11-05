@@ -1,0 +1,9 @@
+{
+  "workers": 16,
+  "db": "scan.db",
+  "targets": [
+    {"plugin": "apis_guru", "url": "https://api.apis.guru/v2/list.json", "name": "apis.guru catalog", "timeout": 90},
+    {"plugin": "public_apis", "url": "https://raw.githubusercontent.com/public-apis/public-apis/master/README.md", "name": "public-apis GitHub", "timeout": 60},
+    {"plugin": "rapidapi_categories", "url": "https://rapidapi.com/sitemap-category.xml", "name": "rapidapi categories", "timeout": 60}
+  ]
+}

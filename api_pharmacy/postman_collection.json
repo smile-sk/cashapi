@@ -1,0 +1,533 @@
+{
+  "info": {
+    "name": "CashAPI Micro Utilities API",
+    "description": "Lightweight developer micro-utilities: validators, generators, extractors, codecs, text tools. 20 endpoints, plain JSON.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /healthz",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/healthz",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "healthz"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/cidr",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/cidr",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "cidr"
+          ],
+          "query": [
+            {
+              "key": "cidr",
+              "value": "x.x.x.x/24",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST /v1/codec/base64",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/codec/base64",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "codec",
+            "base64"
+          ],
+          "query": [
+            {
+              "key": "mode",
+              "value": "slugify",
+              "description": ""
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"data\": \"hello world\", \"mode\": \"encode\"}"
+        }
+      }
+    },
+    {
+      "name": "POST /v1/csv/from-json",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/csv/from-json",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "csv",
+            "from-json"
+          ],
+          "query": [
+            {
+              "key": "delimiter",
+              "value": ",",
+              "description": ""
+            },
+            {
+              "key": "include_header",
+              "value": "true",
+              "description": ""
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"data\": \"[{\\\"name\\\":\\\"Alice\\\",\\\"age\\\":30}]\", \"delimiter\": \",\", \"include_header\": true}"
+        }
+      }
+    },
+    {
+      "name": "POST /v1/csv/to-json",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/csv/to-json",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "csv",
+            "to-json"
+          ],
+          "query": [
+            {
+              "key": "delimiter",
+              "value": ",",
+              "description": ""
+            },
+            {
+              "key": "has_header",
+              "value": "true",
+              "description": ""
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"data\": \"name,age\\nAlice,30\", \"has_header\": true}"
+        }
+      }
+    },
+    {
+      "name": "GET /v1/hash",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/hash",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "hash"
+          ],
+          "query": [
+            {
+              "key": "data",
+              "value": "hello world",
+              "description": ""
+            },
+            {
+              "key": "algo",
+              "value": "sha256",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/jwt/decode",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/jwt/decode",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "jwt",
+            "decode"
+          ],
+          "query": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMifQ.sig",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/password/generate",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/password/generate",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "password",
+            "generate"
+          ],
+          "query": [
+            {
+              "key": "length",
+              "value": "16",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST /v1/text/extract-emails",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/text/extract-emails",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "text",
+            "extract-emails"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\": \"Contact me at john@example.com\"}"
+        }
+      }
+    },
+    {
+      "name": "POST /v1/text/extract-urls",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/text/extract-urls",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "text",
+            "extract-urls"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\": \"See https://example.com/page\"}"
+        }
+      }
+    },
+    {
+      "name": "GET /v1/text/lorem",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/text/lorem",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "text",
+            "lorem"
+          ],
+          "query": [
+            {
+              "key": "words",
+              "value": "20",
+              "description": ""
+            },
+            {
+              "key": "paragraphs",
+              "value": "2",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST /v1/text/tools",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/text/tools",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "text",
+            "tools"
+          ],
+          "query": [
+            {
+              "key": "mode",
+              "value": "slugify",
+              "description": ""
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\": \"Hello, World!\", \"mode\": \"slugify\"}"
+        }
+      }
+    },
+    {
+      "name": "GET /v1/uuid/generate",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/uuid/generate",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "uuid",
+            "generate"
+          ],
+          "query": [
+            {
+              "key": "count",
+              "value": "1",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/uuid/v7",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/uuid/v7",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "uuid",
+            "v7"
+          ],
+          "query": [
+            {
+              "key": "count",
+              "value": "1",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/validate/card",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/validate/card",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "validate",
+            "card"
+          ],
+          "query": [
+            {
+              "key": "number",
+              "value": "4539578763621486",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/validate/email",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/validate/email",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "validate",
+            "email"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "test@example.com",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/validate/iban",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/validate/iban",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "validate",
+            "iban"
+          ],
+          "query": [
+            {
+              "key": "iban",
+              "value": "DE89370400440532013000",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/validate/ip",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/validate/ip",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "validate",
+            "ip"
+          ],
+          "query": [
+            {
+              "key": "ip",
+              "value": "8.8.8.8",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/validate/phone",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/validate/phone",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "validate",
+            "phone"
+          ],
+          "query": [
+            {
+              "key": "phone",
+              "value": "+380501234567",
+              "description": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /v1/validate/vat",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://apiteka.pp.ua/v1/validate/vat",
+          "host": [
+            "https://apiteka.pp.ua"
+          ],
+          "path": [
+            "https://apiteka.pp.ua",
+            "v1",
+            "validate",
+            "vat"
+          ],
+          "query": [
+            {
+              "key": "vat",
+              "value": "UA36880860",
+              "description": ""
+            },
+            {
+              "key": "country",
+              "value": "UA",
+              "description": ""
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
